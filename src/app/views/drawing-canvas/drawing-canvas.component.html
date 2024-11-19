@@ -1,0 +1,16 @@
+<div class="row firma" style="margin-top: 1%; margin-left: 5%;">
+    <h6 class="text-center" style="font-weight: bold;">Firma {{ firma }} </h6>
+    <canvas #drawingCanvas 
+    id="canvas_firma"
+    width="300px" 
+    height="150px"
+    >
+    </canvas>
+    <div class="footer firma">
+        <i class="bi bi-pen-fill" style="color: black;"></i>
+        <input type="range" id="input_range" min="1" max="100" class="pen-range">
+        <button mat-raised-button  id="limpiar_canvas" (click)="clearCanvas()">Limpiar firma</button>
+        <button mat-flat-button id="guardar_canvas" (click)="saveCanvas()">Guardar firma</button>
+    </div>
+
+</div>

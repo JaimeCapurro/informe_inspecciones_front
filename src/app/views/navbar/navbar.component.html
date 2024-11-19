@@ -1,0 +1,47 @@
+<mat-toolbar>
+    <div>
+        <button mat-icon-button class="material-symbols-outlined" [routerLink]="['/form']">
+            <mat-icon>add_notes</mat-icon>
+        </button>
+    </div>
+
+    <div>
+        <button mat-icon-button class="material-symbols-outlined" [routerLink]="['/forms_list']">
+            <mat-icon>table_view</mat-icon>
+        </button>
+    </div>
+
+    <div>
+        <button mat-icon-button class="material-symbols-outlined" [routerLink]="['/users_list']">
+            <mat-icon>group_search</mat-icon>
+        </button>
+    </div>
+
+    <div>
+        <button mat-icon-button class="material-symbols-outlined" [routerLink]="['/create_user']">
+            <mat-icon>person_add</mat-icon>
+        </button>
+    </div>
+
+    <span class="spacer"></span>
+    <span class="spacer"></span>
+    <span class="spacer"></span>
+    <div>
+        <img src="assets/img/logo3.png" width="35" height="35" style="margin: 2%;">
+    </div>
+    <div>
+        <h5 id="title">GRUPO FIRMA</h5>
+    </div>
+    <span class="spacer"></span>
+    <span class="spacer"></span>
+    <span class="spacer"></span>
+    <span class="spacer"></span>
+    
+
+    <div>
+        <button mat-icon-button class="material-symbols-outlined" (click)="openModal()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </div>
+    
+</mat-toolbar>

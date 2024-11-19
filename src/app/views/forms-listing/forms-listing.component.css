@@ -1,0 +1,19 @@
+#header {
+    display: flex;
+    background-color: pink;
+    justify-content: center;
+    width: auto;
+    min-height: 50px;
+    margin-top: 1%;
+    
+}
+
+#title {
+    width: auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.spacer {
+    flex: 1;
+}

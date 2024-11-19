@@ -1,0 +1,19 @@
+.vh-100 {
+    background-color: #f2dce2;
+}
+
+.card.shadow-2-strong {
+    border-radius: 1rem;
+    background-color: #6e6869;
+}
+
+label {
+    color: #ebe1e3;
+}
+h4 {
+    color: #ebe1e3;
+}
+.btn.btn-primary.btn-lg.btn-block {
+    background-color: pink;
+    border-color: #a61f3f;
+}

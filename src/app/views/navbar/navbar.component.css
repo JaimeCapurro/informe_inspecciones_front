@@ -1,0 +1,14 @@
+mat-toolbar {
+    background-color: #c97f98;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+#title {
+    width: auto;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}

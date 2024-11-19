@@ -1,0 +1,27 @@
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong">
+                    <div class="card-body p-5 text-center">
+
+                        <h4 class="fw-bold mb-2 text-uppercase">Inicia sesión</h4>
+                        <form [formGroup]="loginForm">
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input id="user" formControlName="user" class="form-control form-control-lg" />
+                                <label class="form-label" for="user">Nombre de Usuario</label>
+                            </div>
+
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input id="pword" formControlName="pword" class="form-control form-control-lg" type="password" />
+                                <label class="form-label" for="pword">Contraseña</label>
+                            </div>
+                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" type="submit" (click)="login()">Login</button>
+                            <hr class="my-4">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

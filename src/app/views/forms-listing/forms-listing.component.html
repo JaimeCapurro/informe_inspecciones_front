@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <mat-card>
+
+        <mat-card-header id="header">
+            <div class="row">
+                    <h4 id="title">LISTA DE FORMULARIOS</h4>
+            </div>
+            
+        </mat-card-header>
+
+        <table datatable class="row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" >
+            <thead class="bg-dark text-white">
+                <tr>
+                    <td>Nro. formulario</td>
+                    <td>Usuario</td>
+                    <td>Documento</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let form of forms ">
+                    <td>{{ form.form_id }}</td>
+                    <td>{{ form.username }}</td>
+                    <td> <button mat-raised-button (click)="openPdf(form.doc)">Ver PDF</button> </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card>
+</div>

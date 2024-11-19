@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <mat-card>
+
+        <mat-card-header id="header">
+            <div class="row">
+                    <h4 id="title">LISTA DE USUARIOS</h4>
+            </div>
+            
+        </mat-card-header>
+
+        <table datatable class="row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" >
+            <thead class="bg-dark text-white">
+                <tr>
+                    <td>ID Usuario</td>
+                    <td>Usuario</td>
+                    <td>Nombre</td>
+                    <td>Rol</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users ">
+                    <td> {{ user.user_id }} </td>
+                    <td> {{ user.username }} </td>
+                    <td> {{ user.name }} </td>
+                    <td> {{ user.role }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card>
+</div>

@@ -1,0 +1,55 @@
+#header {
+    background-color: pink;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+    min-height: 50px;
+    margin-top: 1%;
+}
+#title {
+    width: auto;
+    font-weight: bold;
+    text-align: center;
+}
+mat-card-content {
+    display: block;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+}
+
+mat-divider {
+    width: auto; 
+    margin-left: 0px;
+}
+
+#mff_nombre_usuario {
+    width: 100%; 
+    margin-right: 2%;
+    margin: 0.5%;
+}
+
+#mff_pword1 {
+    width: 100%; 
+    margin: 1%;
+}
+#mff_pword2 {
+    width: 100%; 
+    margin: 1%;
+}
+
+.row.submit-button {
+    display: block;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-md-12.submit-button {
+    text-align: center;
+}
+
+#btn_user_create {
+    margin-left: 2.5%;
+}
+

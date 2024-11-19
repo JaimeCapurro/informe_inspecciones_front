@@ -1,0 +1,807 @@
+<app-navbar></app-navbar>
+<div class="container" >
+    <mat-card>
+        <form #pdfForm="ngForm">
+            
+            <mat-card-header id="header">
+                <div class="row">
+                    <h4 id="title">INSPECCIÓN CAMIONETA DE TRANSPORTE</h4>
+                </div>
+            </mat-card-header>
+            <mat-divider style="width: auto; margin-left: 0px;"></mat-divider>
+
+            <div class="row" id="form_sub_header">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="conductor">Nombre Conductor</mat-label>
+                            <input matInput id="conductor" name="conductor" ngModel>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="acompanante">Nombre Acompañante</mat-label>
+                            <input matInput id="acompanante" name="acompanante" ngModel>
+                        </mat-form-field>      
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="faena">Faena</mat-label>
+                            <input matInput id="faena" name="faena" ngModel>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="faena">Lugar</mat-label>
+                            <input matInput id="lugar" name="lugar" ngModel>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="patente">Patente</mat-label>
+                            <input matInput id="patente" name="patente" ngModel>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label  for="marca">Marca</mat-label>
+                            <input matInput id="marca" name="marca" ngModel>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="combustible">Tipo de combustible</mat-label>
+                            <input matInput id="combustible" name="combustible" ngModel>
+                        </mat-form-field>
+                    </div>
+                    
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3">    
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="kilo_inicio">Kilometraje inicio</mat-label>
+                            <input matInput id="km_iniciio" name="km_inicio" ngModel>
+                        </mat-form-field>
+                    </div>    
+                    <div class="col-md-3">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="kilo_final">Kilometraje final</mat-label>
+                            <input matInput id="km_final" name="km_final" ngModel>
+                        </mat-form-field>
+                    </div>
+                        
+                    <div class="col-md-6">
+                        <mat-form-field style="width: 100%; margin: 1%;">
+                            <mat-label for="prox_mantencion">Próxima Mantención</mat-label>
+                            <input matInput id="prox_mantencion" name="prox_mantencion" ngModel>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--<mat-divider></mat-divider>-->
+
+            <div class="row" id="form_item_1" style="max-width: 1080px;">
+
+                <mat-grid-list [cols]="col2" rowHeight="5:1" style="margin-left: 5%;">
+
+                    <!-------------- ITEM 1 --------------->
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> PARTES </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> PARTES </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="direccion" style="text-align: left;">Dirección</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #direccion aria-label="1.1" name="direccion" [(ngModel)]="direccion_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="cinturon">Cinturón de Seguridad</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #cinturon aria-label="1.2" name="cinturon" [(ngModel)]="cinturon_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="carroceria">Carrocería</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #carroceria aria-label="1.3" name="carroceria" [(ngModel)]="carroceria_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="bocina">Bocina</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #bocina aria-label="1.4" name="bocina" [(ngModel)]="bocina_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="aire_calefaccion">Aire Acondicionado y Calefacción</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #aire_calefaccion aria-label="1.5" name="aire_calefaccion" [(ngModel)]="aire_calefaccion_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="asientos_cabina">Estado de Asientos y Cabina</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #asientos_cabina aria-label="1.6" name="asientos_cabina" [(ngModel)]="asientos_cabina_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="limpiaparabrisas">Limpia Parabrisas</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #limpiaparabrisas aria-label="1.7" name="limpiaparabrisas" [(ngModel)]="limpiaparabrisas_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="frenos">Frenos</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #frenos aria-label="1.8" name="frenos" [(ngModel)]="frenos_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="neumaticos">Estado de Neumáticos</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #neumaticos aria-label="1.9" name="neumaticos" [(ngModel)]="neumaticos_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="tablero">Estado del Tablero</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #tablero aria-label="1.10" name="tablero" [(ngModel)]="tablero_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="parabrisas_ventanas">Parabrisas y Ventanas</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #parabrisas_ventanas aria-label="1.11" name="parabrisas_ventanas" [(ngModel)]="parabrisas_ventanas_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="puertas_bisagras">Estado de Puertas y Bisagras</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #puertas_bisagras aria-label="1.12" name="puertas_bisagras" [(ngModel)]="puertas_bisagras_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+                    <!------------------------------>
+                    <mat-divider></mat-divider>
+                    <!-----------ITEM 2------------->
+                <mat-grid-list [cols]="col2" rowHeight="5:1" style="margin-left: 5%;">
+
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> EQUIPOS DE SEGURIDAD </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> EQUIPOS DE SEGURIDAD </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="extintor">Extintor (es)</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #extintor aria-label="2.1" name="extintor" [(ngModel)]="extintor_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="triangulos">Triángulos</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #triangulos aria-label="2.2" name="triangulos" [(ngModel)]="triangulos_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="botiquin">Botiquín</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #botiquin aria-label="2.3" name="botiquin" [(ngModel)]="botiquin_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="gata">Gata, Llave de Rueda</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #gata aria-label="2.4" name="gata" [(ngModel)]="gata_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="chaleco">Chaleco Reflectante</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #chaleco aria-label="2.5" name="chaleco" [(ngModel)]="chaleco_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="tuercas">Estado Tuercas e Indicador de Posición</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #tuercas aria-label="2.6" name="tuercas" [(ngModel)]="tuercas_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="kit_invierno">Kit de Invierno</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #kit_invierno aria-label="2.7" name="kit_invierno" [(ngModel)]="kit_invierno_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1"> 
+                        <label id="neumaticos_repuesto">Neumáticos de Repuesto</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1"> 
+                        <mat-button-toggle-group #neumaticos_repuesto aria-label="2.8" name="neumaticos_repuesto" [(ngModel)]="neumaticos_repuesto_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+                    
+                </mat-grid-list>
+                    <!------------------------------>
+                <mat-divider></mat-divider>
+                    <!-----------ITEM 3------------->
+                <mat-grid-list [cols]="col2" rowHeight="5:1" style="margin-left: 5%;">
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> LUCES </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> LUCES </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="luces_traseras" style="text-align: left;">Luces Traseras</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #luces_traseras aria-label="3.1" name="luces_traseras" [(ngModel)]="luces_traseras_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="luces_delanteras" style="text-align: left;">Luces Delanteras</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #luces_delanteras aria-label="3.2" name="luces_delanteras" [(ngModel)]="luces_delanteras_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="luces_direccionales" style="text-align: left;">Luces Direccionales</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #luces_direccionales aria-label="3.3" name="luces_direccionales" [(ngModel)]="luces_direccionales_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="neblineros" style="text-align: left;">Neblineros</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #neblineros aria-label="3.4" name="neblineros" [(ngModel)]="neblineros_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="balizas" style="text-align: left;">Estado Balizas</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #balizas aria-label="3.5" name="balizas" [(ngModel)]="balizas_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+
+                    <!------------------------------>
+                    <mat-divider></mat-divider>
+                    <!-----------ITEM 4------------->
+
+                <mat-grid-list [cols]="col2" rowHeight="5:1" style="margin-left: 5%;">
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> ORDEN, LIMPIEZA Y ASEO </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> ORDEN, LIMPIEZA Y ASEO </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="habitaculo" style="text-align: left;">Habitáculo de Pasajeros</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #habitaculo aria-label="4.1" name="habitaculo" [(ngModel)]="habitaculo_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="carroceria_gabinete" style="text-align: left;">Carrocería y Gabinetes</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #carroceria_gabinete aria-label="4.2" name="carroceria_gabinete" [(ngModel)]="carroceria_gabinete_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+
+                    <!------------------------------>
+                    <mat-divider></mat-divider>
+                    <!-----------ITEM 5------------->   
+                    
+                <mat-grid-list [cols]="col2" rowHeight="5:1" style="margin-left: 5%;">
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> DOCUMENTOS </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> DOCUMENTOS </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="revision_tecnica" style="text-align: left;">Revisión Técnica y Gases</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #revision_tecnica aria-label="5.1" name="revision_tecnica" [(ngModel)]="revision_tecnica_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="permiso_circulacion" style="text-align: left;">Permiso Circulación y SOAP</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #permiso_circulacion aria-label="5.2" name="permiso_circulacion" [(ngModel)]="permiso_circulacion_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+                    
+                    <mat-grid-tile colspan="1">
+                        <label id="licencia_conducir" style="text-align: left;">Licencia de Conducir</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #licencia_conducir aria-label="5.3" name="licencia_conducir" [(ngModel)]="licencia_conducir_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+
+                    <!------------------------------>
+                    <mat-divider></mat-divider>
+                    <!-----------ITEM 6------------->
+
+                <mat-grid-list [cols]="col2" rowHeight="5:1" style="margin-left: 5%;">
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> MOTOR Y NIVELES </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> MOTOR Y NIVELES </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="bateria_fusibles" style="text-align: left;">Batería, Borne, Fusibles, Filtro de Polvo</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #bateria_fusibles aria-label="6.1" name="bateria_fusibles" [(ngModel)]="bateria_fusibles_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="correas_filtro" style="text-align: left;">Correas y Filtro RACOR PURGADO</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #correas_filtro aria-label="6.2" name="correas_filtro" [(ngModel)]="correas_filtro_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="niveles" style="text-align: left;">Niveles (Agua, Aceite, Hidráulico, Freno)</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #niveles aria-label="6.3" name="niveles" [(ngModel)]="niveles_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="filtro_particulas" style="text-align: left;">Filtro Partículas Diésel (DPF)</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #filtro_particulas aria-label="6.4" name="filtro_particulas" [(ngModel)]="filtro_particulas_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+
+                </mat-grid-list>
+                
+                    <!------------------------------>
+                    <mat-divider></mat-divider>
+                    <!-----------ITEM 7------------->
+
+                <mat-grid-list [cols]="col2" rowHeight="5:1" style="margin-left: 5%;">
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> OTROS </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> OTROS </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="winche_control" style="text-align: left;">Winche y Control</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #winche_control aria-label="7.1" name="winche_control" [(ngModel)]="winche_control_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="mobileye" style="text-align: left;">Sistema Mobileye</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #mobileye aria-label="7.2" name="mobileye" [(ngModel)]="mobileye_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <label id="soporte_extintores" style="text-align: left;">Soportes Extintores</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #soporte_extintores aria-label="7.3" name="soporte_extintores" [(ngModel)]="soporte_extintores_value">
+                            <mat-button-toggle value="B" >B</mat-button-toggle>
+                            <mat-button-toggle value="R" >R</mat-button-toggle>
+                            <mat-button-toggle value="M" >M</mat-button-toggle>
+                            <mat-button-toggle value="N/A" >N/A</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+                
+                <!------------------------------>
+                <mat-divider></mat-divider>
+                <!-----------ITEM 8------------->
+
+                <mat-grid-list [cols]="col3" rowHeight="2:1" style="margin-left: 5%;">
+                    <mat-grid-tile colspan="3" style="font-weight: bold;"> FATIGA Y SOMNOLENCIA </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+                    <mat-grid-tile colspan="3" style="font-weight: bold;"> FATIGA Y SOMNOLENCIA </mat-grid-tile>
+                    <mat-grid-tile colspan="1" style="font-weight: bold;"> VERIFICACIÓN </mat-grid-tile>
+
+                    <mat-grid-tile colspan="3">
+                        <label id="punto1_fatiga" style="text-align: left;">Estoy en óptimas condiciones física y mentales para conducir de forma segura</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #punto1_fatiga aria-label="8.1" name="punto1_fatiga" [(ngModel)]="punto1_fatiga_value">
+                            <mat-button-toggle value="SI" >SI</mat-button-toggle>
+                            <mat-button-toggle value="NO" >NO</mat-button-toggle>
+                            
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="3">
+                        <label id="punto2_fatiga" style="text-align: left;">Conozco peligros y riesgos asociados a conducción</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #punto2_fatiga aria-label="8.2" name="punto2_fatiga" [(ngModel)]="punto2_fatiga_value">
+                            <mat-button-toggle value="SI" >SI</mat-button-toggle>
+                            <mat-button-toggle value="NO" >NO</mat-button-toggle>
+                            
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="3">
+                        <label id="punto3_fatiga" style="text-align: left;">Aplicaré las medidas de control para evitar accidentes vehiculares</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #punto3_fatiga aria-label="8.3" name="punto3_fatiga" [(ngModel)]="punto3_fatiga_value">
+                            <mat-button-toggle value="SI" >SI</mat-button-toggle>
+                            <mat-button-toggle value="NO" >NO</mat-button-toggle>
+                            
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="3">
+                        <label id="punto4_fatiga" style="text-align: left;">Siempre respetaré las normas de conducir</label>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">    
+                        <mat-button-toggle-group #punto4_fatiga aria-label="8.4" name="punto4_fatiga" [(ngModel)]="punto4_fatiga_value">
+                            <mat-button-toggle value="SI" >SI</mat-button-toggle>
+                            <mat-button-toggle value="NO" >NO</mat-button-toggle>
+                            
+                        </mat-button-toggle-group>
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+
+                <!------------------------------------->
+                <mat-divider></mat-divider>
+                <!-----------OBSERVACIONES------------->
+
+                <mat-form-field appearance="fill" style="margin-top: 1%; margin-left: 5%;">
+                    <mat-label style="font-weight: bold;">OBSERVACIONES</mat-label>
+                    <textarea matInput id="observaciones" rows="5" name="observaciones" [(ngModel)]="observaciones"></textarea>
+                </mat-form-field>
+
+                <!--------------------------------->
+                <mat-divider></mat-divider>
+                <!-----------ANOMALIAS------------->
+                
+            
+                <div class="row" id="divSwiper">
+                    <swiper-container  id="swiper_container_anomalias" loop="true" navigation="true" pagination="true">
+                        <ng-container *ngFor="let img of b64ImgArray; let i = index">
+                            <swiper-slide>
+                                <img [src]="img" [id]="i" width="400" height="400">
+                            </swiper-slide>
+                        </ng-container>
+                    </swiper-container>
+                    <input type="file" id="arrayImagenes" name="arrayImagenes" multiple style="display: none;" [(ngModel)]="imgArray">
+                </div>
+            
+                <div class="row" id="rowImgInput">
+                    <div class="row">
+                        <h1 id="fotoUpload">ANOMALÍAS</h1>
+                        <input type="file" accept="image/*" capture="environment" (change)="uploadImg($event)" style="display: none;" #photoInput>
+                    </div>
+                    
+                    <div class="row" id="rowImgInputButtons">
+                        <div class="col-md-6">
+                            <button mat-stroked-button (click)="photoInput.click()" id="pickFoto">Selecciona un Archivo</button>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
+                <!------------------------------------------>
+                <mat-divider></mat-divider>
+                <!-----------DECLARACIÓN JURADA------------->
+
+                <p id="declaracion">
+                    <span style="font-weight: bold;">DECLARACIÓN JURADA:</span> 
+                    "Declaro bajo juramento que, las condiciones físicas y mecánicas que evalúo 
+                    como responsable de la camioneta, se realizaron con el criterio necesario
+                    para identificar desviaciones que pudieran causar incidentes o consecuencias
+                    graves por omisión o descuido, por lo que, estas condiciones reportadas,
+                    están conforme a la realidad del vehículo."
+                </p>
+
+                <!------------------------------>
+                <mat-divider style="margin-bottom: 10px;"></mat-divider>
+                <!-----------FIRMAS------------->
+                <!--campos de formularios firmas-->
+                <div class="row" style="margin-top: 1%; margin-left: 5%;">
+                    <div class="col-md-6">
+                        <mat-form-field >
+                            <mat-label for="conductor_field_2">Nombre Conductor</mat-label>
+                            <input matInput id="conductor_field_2" name="conductor_field_2" ngModel>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field style="width: 100%;">
+                            <mat-label for="acompanante_field_2">Nombre Acompañante</mat-label>
+                            <input matInput id="acompanante_field_2" name="acompanante_field_2" ngModel>
+                        </mat-form-field>
+                    </div>
+                    
+                </div>
+
+                <div class="row" style="margin-top: 1%; margin-left:5%;">
+                    <div class="col-md-5">
+                        <mat-form-field style="width: 100%;">
+                            <mat-label for="input_informado">Informado a</mat-label>
+                            <input matInput id="input_informado" name="input_informado" ngModel>
+                        </mat-form-field>
+                    </div>
+                            
+
+                    <div class="col-md-5">
+                        <mat-form-field style="width: 100%;">
+                            <mat-label for="input_cargo">Cargo </mat-label>
+                            <input matInput id="input_cargo" name="input_cargo" ngModel>
+                        </mat-form-field>
+                    </div>  
+
+                    <div class="col-md-2">
+                        <mat-form-field style="width: 100%;">
+                            <mat-label for="fecha_form1">Fecha</mat-label>
+                            <input matInput id="fecha_form1" name="fecha_form1" ngModel>
+                        </mat-form-field>
+                    </div>
+
+                            
+
+                </div>
+
+                <!--cuadros canvas firmas-->
+                <mat-grid-list [cols]="col1" gutterSize="5px" style="margin-left: 2%;">
+                    <mat-grid-tile colspan="1">
+                        <app-drawing-canvas firma="Conductor"
+                        name="canvas_firma_cond" 
+                        (firmaData)="onFirmaConductorReceived($event)" 
+                        [(ngModel)]="inputFirmaConductor"></app-drawing-canvas>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile colspan="1">
+                        <app-drawing-canvas firma="Acompañante"
+                        name="canvas_firma_acomp" 
+                        (firmaData)="onFirmaAcompananteReceived($event)" 
+                        [(ngModel)]="inputFirmaAcompanante"></app-drawing-canvas>
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+                
+            
+            </div>
+        
+            <div class="row submit-button">
+                <div class="col-md-12 submit-button">
+                    <button mat-fab extended id="submitGeneratePDF" type="submit" (click)="openModal(pdfForm)" >Generar PDF</button>
+                </div>
+            </div>
+
+        </form>
+
+        
+    </mat-card>
+</div>

@@ -1,0 +1,35 @@
+.bi.bi-pen.fill {
+    font-size: 20px;
+    margin: 10%;
+}
+.pen-range {
+    margin-left: 1%;
+    margin-right: 2%;
+}
+.row.firma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas_firma {
+    border:1px solid black; 
+    background-color: #e6e6e6;
+    width: 500px;
+}
+#limpiar_canvas {
+    margin-right: 2%;
+
+}
+#guardar_canvas {
+    margin-left: 2%;
+}
+@media (max-width: 600px) {
+    button {
+        width: 95px;
+    }
+    
+    #input_range {
+        width: 80px;
+    }
+}
